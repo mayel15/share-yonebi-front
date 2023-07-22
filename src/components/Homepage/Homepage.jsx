@@ -11,7 +11,6 @@ import SearchResults from '../SearchResults/SearchResults';
 
 export default function Homepage() {
   const [resources, setResources] = useState([]);
-  const inputSearch = useSelector((state) => state.inputsearch.inputSearch); // Récupérez la variable "result" du store
   const isClicked = useSelector((state) => state.inputsearch.isClicked);
 
   useEffect(() => {
@@ -25,8 +24,8 @@ export default function Homepage() {
         });
 
         const data = await response.json();
-        console.log(data);
-        setResources(data.slice(0,10));
+        console.log(data.sort());
+        setResources(data.sort().slice(0,10));
       } catch (error) {
         console.error(error);
       }
@@ -45,7 +44,7 @@ export default function Homepage() {
         
         <h3 className="text-center"> Voici quelques unes ! </h3>
         <div className="row">
-          { (!isClicked)
+          { ((!isClicked)
             ? resources.map((r, index) => (
               <Resource
                 title={r.title}
@@ -57,7 +56,7 @@ export default function Homepage() {
                 subject={r.subject}
                 category={r.category}
                 id={r._id}
-              />)) : <SearchResults />       
+              />)) : <SearchResults />)       
           }
           
         </div>

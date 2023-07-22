@@ -29,9 +29,6 @@ export default function Search() {
       const filteredData = data.filter(r => r.title.toLowerCase().includes(inputSearch.toLowerCase()));
       console.log(filteredData);
       dispatch(setResult(filteredData)); 
-      if(window.location.href !== '/'){
-        window.location.href = '/';
-      }
     } catch (error) {
       console.error(error);
     }

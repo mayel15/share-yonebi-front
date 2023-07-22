@@ -1,6 +1,5 @@
 import {React, useEffect, useState} from "react";
 import Sidebar from "../Sidebar/Sidebar";
-import { Link } from "react-router-dom";
 import GestionButtons from "../GestionButtons/GestionButtons";
 import Resource from "../Resource/Resource";
 
@@ -18,8 +17,8 @@ export default function AdminHome() {
                 });
 
                 const data = await response.json();
-                console.log(data);
-                setResources(data);
+                console.log(data.sort());
+                setResources(data.sort());
             } catch (error) {
                 console.error(error);
             }
