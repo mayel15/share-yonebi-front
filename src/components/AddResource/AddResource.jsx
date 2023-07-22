@@ -29,48 +29,48 @@ export default function AddResource() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        if(formData.title === "" 
-        || formData.url === ""
-        || formData.description === ""
-        || formData.authors === ""
-        || formData.subject === ""
-        || formData.category === ""){
+        if (formData.title === ""
+            || formData.url === ""
+            || formData.description === ""
+            || formData.authors === ""
+            || formData.subject === ""
+            || formData.category === "") {
             alert('Au moins un champ du formulaire est vide. :(')
-        }else{
-        await fetch('https://yonebi-back.vercel.app/api/resources/add', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
-                if(data.message){
-                    alert(data.message)
-                    window.location.href = '/admin/add'
-                }else {
-                    window.location.href = '/admin/home'
-                }
-                
+        } else {
+            await fetch('https://yonebi-back.vercel.app/api/resources/add', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
             })
-            .catch((error) => {
-                console.error(error);
-            });
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    if (data.message) {
+                        alert(data.message)
+                        window.location.href = '/admin/add'
+                    } else {
+                        window.location.href = '/admin/home'
+                    }
+
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
         }
     };
 
     const toggleS = () => {
-        (temoinS) 
-        ? setTemoinS(false)
-        : setTemoinS(true)
+        (temoinS)
+            ? setTemoinS(false)
+            : setTemoinS(true)
     }
 
     const toggleC = () => {
-        (temoinC) 
-        ? setTemoinC(false)
-        : setTemoinC(true)
+        (temoinC)
+            ? setTemoinC(false)
+            : setTemoinC(true)
     }
 
 
@@ -106,22 +106,22 @@ export default function AddResource() {
 
     return (
         <div className="text-center">
-        <GestionButtons />
-        <h3>Ajout d'une ressource</h3>
+            <GestionButtons />
+            <h3>Ajout d'une ressource</h3>
             <button
                 onClick={toggleS}
             >
-                {(!temoinS) 
-                ? <div>Ajouter un sujet</div> 
-                : <div>Sélectionner un sujet</div>  
+                {(!temoinS)
+                    ? <div>Ajouter un sujet</div>
+                    : <div>Sélectionner un sujet</div>
                 }
             </button>
             <button
                 onClick={toggleC}
             >
-                {(!temoinS) 
-                ? <div>Ajouter une catégorie</div> 
-                : <div>Sélectionner une catégorie</div>  
+                {(!temoinS)
+                    ? <div>Ajouter une catégorie</div>
+                    : <div>Sélectionner une catégorie</div>
                 }
             </button>
 
@@ -136,7 +136,14 @@ export default function AddResource() {
                 </div>
                 <div>
                     <label htmlFor="description">Description</label>
-                    <input type='text' name="description" value={formData.description} placeholder="Description" onChange={handleChange} />
+                    <textarea
+                        name="description"
+                        value={formData.description}
+                        placeholder="Description"
+                        onChange={handleChange}
+                        rows={4}
+                        cols={50} 
+                    />
                 </div>
                 <div>
                     <label htmlFor="authors">Auteurs</label>
@@ -153,8 +160,8 @@ export default function AddResource() {
                             : (
                                 <select value={formData.subject} name="subject" onChange={handleChange}>
                                     <option value="">Select an option</option>
-                                    {subjects.map((s)=>{
-                                        return(<option value={s.name} > {s.name} </option>)
+                                    {subjects.map((s) => {
+                                        return (<option value={s.name} > {s.name} </option>)
                                     })}
                                 </select>
                             )
@@ -172,8 +179,8 @@ export default function AddResource() {
                             : (
                                 <select value={formData.category} name="category" onChange={handleChange}>
                                     <option value="">Select an option</option>
-                                    {categories.map((c)=>{
-                                        return(<option value={c.name}> {c.name} </option>)
+                                    {categories.map((c) => {
+                                        return (<option value={c.name}> {c.name} </option>)
                                     })}
                                 </select>
                             )
