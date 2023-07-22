@@ -46,8 +46,8 @@ export default function Login(props) {
         <form className="text-center" onSubmit={handleSubmit}>
             {
                 (props.access === "login")
-                ? <h1>Se connecter</h1>
-                : <h1>S'inscrire </h1>
+                ? <h1>Se connecter [admin]</h1>
+                : <h1>S'inscrire [admin]</h1>
             }
             <div>
                 <label htmlFor="username">Username</label>
