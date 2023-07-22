@@ -36,8 +36,6 @@ export default function CategoryPage(props) {
   return (
     <div>
       <div className="row content-section">
-        {/*<h1>{subject}</h1>
-      <h2>{category}</h2>*/}
         {
           (props.view === 'admin')
             ? <Sidebar view='admin' />
