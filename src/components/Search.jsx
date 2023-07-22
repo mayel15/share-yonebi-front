@@ -1,18 +1,21 @@
-import React, { useState } from "react";
-import Resource from "./Resource/Resource";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { setResult } from "../reducers/resourceSlice";
+import { setInputSearch, setIsClicked } from '../reducers/inputsearchSlice';
+import { useSelector } from 'react-redux';
 
 export default function Search() {
-  const [inputSearch, setInputSearch] = useState("");
-  const [result, setResult] = useState([]);
-
-
+  const inputSearch = useSelector((state) => state.inputsearch.inputSearch); // Récupérez la variable "result" du store
+  const dispatch = useDispatch();
+  
   const handleChange = (event) => {
     event.preventDefault();
-    setInputSearch(event.target.value);
+    dispatch(setInputSearch(event.target.value)); 
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    dispatch(setIsClicked(true));
 
     try {
       const response = await fetch("https://yonebi-back.vercel.app/api/resources/", {
@@ -25,7 +28,10 @@ export default function Search() {
       const data = await response.json();
       const filteredData = data.filter(r => r.title.toLowerCase().includes(inputSearch.toLowerCase()));
       console.log(filteredData);
-      setResult(filteredData);
+      dispatch(setResult(filteredData)); 
+      if(window.location.href !== '/'){
+        window.location.href = '/';
+      }
     } catch (error) {
       console.error(error);
     }
@@ -33,24 +39,8 @@ export default function Search() {
 
   return (
     <form className="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={handleChange} />
-        <button class="btn btn-outline-dark" type="submit" onClick={handleSubmit}>Search</button>
-        {
-          (result)
-          ? (result.map((r, index) => (
-                  <Resource
-                    title={r.title}
-                    key={r.id}
-                    url={r.url}
-                    authors={r.authors}
-                    addedAt={r.addedAt.toString()}
-                    description={r.description}
-                    subject={r.subject}
-                    category={r.category}
-                    id={r._id}
-                  />)))
-          : null
-        }
-    </form> 
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={handleChange} />
+      <button class="btn btn-outline-dark" type="submit" onClick={handleSubmit}>Search</button>
+    </form>
   );
 }
