@@ -46,13 +46,13 @@ export default function Resource(props) {
                                 className="icon-card"
                                 onClick={handleEdit}
                             >
-                                <i class="fa-solid fa-pen"></i>
+                                <i className="fa-solid fa-pen"></i>
                             </button>
                             <button
                                 className="icon-card"
                                 onClick={handleDelete}
                             >
-                                <i class="fa-sharp fa-solid fa-trash"></i>
+                                <i className="fa-sharp fa-solid fa-trash"></i>
                             </button>
                         </div>
                     )

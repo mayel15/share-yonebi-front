@@ -36,8 +36,8 @@ export default function Search() {
 
   return (
     <form className="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={handleChange} />
-      <button class="btn btn-outline-dark" type="submit" onClick={handleSubmit}>Search</button>
+      <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={handleChange} />
+      <button className="btn btn-outline-dark" type="submit" onClick={handleSubmit}>Search</button>
     </form>
   );
 }

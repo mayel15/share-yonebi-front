@@ -5,16 +5,16 @@ import Search from "../Search";
 
 export default function HeaderNav() {
     return (
-        <nav class="navbar bg-body-tertiary header-nav content-section">
-            <div class="container-fluid">
-                <a href="/" class="navbar-brand">yonebi.</a>
+        <nav className="navbar bg-body-tertiary header-nav content-section">
+            <div className="container-fluid">
+                <a href="/" className="navbar-brand">yonebi.</a>
                 <Search />
                 <div className="icons-header">
                     <div>
-                        <Link to="/infos"><i class="fa-solid fa-circle-info"></i></Link>
+                        <Link to="/infos"><i className="fa-solid fa-circle-info"></i></Link>
                     </div>
                     <div>
-                        <Link to="/admin/login"><i class="fa-solid fa-right-to-bracket"></i></Link>
+                        <Link to="/admin/login"><i className="fa-solid fa-right-to-bracket"></i></Link>
                     </div>
                 </div>
 
