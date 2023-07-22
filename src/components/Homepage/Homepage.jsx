@@ -1,14 +1,18 @@
 import React from "react";
-import Search from "../Search";
 import Resource from "../Resource/Resource";
 import { useState, useEffect } from "react";
-import HeaderNav from "../Header/HeaderNav";
 import Sidebar from "../Sidebar/Sidebar";
 import './Homepage.css';
 import Footer from "../Footer/Footer";
 
+import { useSelector } from 'react-redux';
+import SearchResults from '../SearchResults/SearchResults';
+
+
 export default function Homepage() {
   const [resources, setResources] = useState([]);
+  const inputSearch = useSelector((state) => state.inputsearch.inputSearch); // Récupérez la variable "result" du store
+  const isClicked = useSelector((state) => state.inputsearch.isClicked);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,8 +45,8 @@ export default function Homepage() {
         
         <h3 className="text-center"> Voici quelques unes ! </h3>
         <div className="row">
-          {
-            resources.map((r, index) => (
+          { (!isClicked)
+            ? resources.map((r, index) => (
               <Resource
                 title={r.title}
                 key={r.id}
@@ -53,10 +57,11 @@ export default function Homepage() {
                 subject={r.subject}
                 category={r.category}
                 id={r._id}
-              />))
+              />)) : <SearchResults />       
           }
+          
         </div>
-      
+        
       </div>
       <Footer />
     </div>

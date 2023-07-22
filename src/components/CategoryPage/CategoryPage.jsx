@@ -10,7 +10,7 @@ import GestionButtons from '../GestionButtons/GestionButtons';
 export default function CategoryPage(props) {
   const { subject, category } = useParams();
   const [resources, setResources] = useState([]);
-
+  
   useEffect(() => {
     const getResources = async () => {
       try {
@@ -87,7 +87,7 @@ export default function CategoryPage(props) {
             }
           </div>
         </div>
-        <Footer />
+        <Footer /> 
       </div>
       
     </div>

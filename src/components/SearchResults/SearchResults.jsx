@@ -1,12 +1,16 @@
 import React from "react";
 import Resource from "../Resource/Resource";
+import { useSelector } from 'react-redux';
 
-export default function Search(props) {
+export default function SearchResults() {
+  
+  const result = Object.freeze(useSelector((state) => state.resources.result)); // Récupérez la variable "result" du store
+
   return (
-    <div className="content-section">
+    <div>
         {
-            (props.result.length !== 0)
-            ?(props.result
+            (result.length !== 0)
+            ?(result
                 .map((r, index) => (
                   <Resource
                     title={r.title}
@@ -19,7 +23,7 @@ export default function Search(props) {
                     category={r.category}
                     id={r._id}
                   />)))
-            : <div>Aucun résultat trouvé :( </div>
+            : <div className="text-center">Aucun résultat trouvé :( </div>
         } 
       
     </div>
