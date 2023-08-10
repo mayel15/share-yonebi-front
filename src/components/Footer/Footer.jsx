@@ -3,11 +3,11 @@ import './Footer.css'
 
 export default function Footer() {
   var date = new Date().getFullYear()
-  var text_footer = "yonebi. © " + date + " | Tous droits réservés"
+  var text_footer = date + " | Tous droits réservés"
 
   return (
       <div className="text-center footer">
-        <div>{text_footer}</div>
+        <div>yonebi. <i class="fa-solid fa-signs-post"></i> © {text_footer}</div>
       </div>
   )
 }

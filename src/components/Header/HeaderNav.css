@@ -5,3 +5,7 @@
 .content-section {
     padding: 0 10%;
 }
+
+.header-nav a {
+    font-weight: bolder;
+}

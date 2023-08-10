@@ -39,7 +39,7 @@ export default function Homepage() {
     <div className="row content-section content-center">
       <Sidebar />
       <div className="welcome-section col-lg-9">
-        <h2 className="text-center">Bienvenue dans yonebi. </h2>
+        <h2 className="text-center"><i class="fa-solid fa-door-open"></i> Bienvenue dans yonebi. </h2>
         <p className="text-center">Votre banque de liens de ressources numériques.<br/>Accéder aux meilleures formations gratuites.</p>
         
         <h3 className="text-center"> Voici quelques unes ! </h3>
