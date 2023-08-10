@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import Subject from "../Subject/Subject";
 import './Subjects.css'
 import GestionButtons from "../GestionButtons/GestionButtons";
+import Loading from "../Loading/Loading";
 
 export default function Subjects() {
 
@@ -35,7 +36,7 @@ export default function Subjects() {
             <h3 className="text-center col-lg-12 content-center">Gérer les sujets</h3>
             <div className="content-center row">
 
-                {
+                {(!subjects.length) ? <Loading url='https://i.gifer.com/XlO9.gif' /> :
                     subjects.map((s, index) => (
                         <Subject
                             key={s.id}

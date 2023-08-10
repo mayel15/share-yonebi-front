@@ -2,6 +2,7 @@ import {React, useEffect, useState} from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import GestionButtons from "../GestionButtons/GestionButtons";
 import Resource from "../Resource/Resource";
+import Loading from "../Loading/Loading";
 
 export default function AdminHome() {
     const [resources, setResources] = useState([]);
@@ -37,8 +38,8 @@ export default function AdminHome() {
                 </div>
                 <GestionButtons />
                 <div className="row">
-                    {
-                        resources.map((r, index) => (
+                    {(!resources.length) ? <Loading url='https://i.gifer.com/XlO9.gif' />
+                        : resources.map((r, index) => (
                             <Resource
                                 title={r.title}
                                 key={r.id}

@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import Category from "../Category/Category";
 import GestionButtons from "../GestionButtons/GestionButtons";
+import Loading from "../Loading/Loading";
 
 export default function Categories() {
 
@@ -34,7 +35,7 @@ export default function Categories() {
             <h3 className="text-center col-lg-12 content-center">Gérer les catégories</h3>
             <div className="content-center row">
 
-                {
+                {(!categories.length) ? <Loading url='https://i.gifer.com/XlO9.gif' /> :
                     categories.map((c, index) => (
                         <Category
                             key={c.id}

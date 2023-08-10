@@ -1,6 +1,7 @@
 import React from "react";
 import Resource from "../Resource/Resource";
 import { useSelector } from 'react-redux';
+import Loading from "../Loading/Loading";
 
 export default function SearchResults() {
   
@@ -8,10 +9,10 @@ export default function SearchResults() {
 
   return (
     <div>
-        {
-            (result.length !== 0)
-            ?(result
-                .map((r, index) => (
+        {(!result.length) 
+        ? <Loading url='https://i.gifer.com/XlO9.gif' /> 
+        : ((result.length !== 0)
+            ?(result.map((r, index) => (
                   <Resource
                     title={r.title}
                     key={r.id}
@@ -23,7 +24,7 @@ export default function SearchResults() {
                     category={r.category}
                     id={r._id}
                   />)))
-            : <div className="text-center">Aucun résultat trouvé :( </div>
+            : <div className="text-center">Aucun résultat trouvé :| </div>)
         } 
       
     </div>
