@@ -1,0 +1,17 @@
+input, button, select {
+    margin: 10px;
+    border-radius: 10px; 
+}
+
+textarea{
+    margin: 10px;
+    border-radius: 5px;
+}
+
+button {
+    background: white;
+}
+
+button:hover {
+    font-weight: bold;
+}

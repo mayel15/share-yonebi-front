@@ -137,7 +137,7 @@ export default function Resource(props) {
                             </button>
                             <button
                                 className="icon-card"
-                                onClick={handleDelete}
+                                onClick={handleDelete}            
                             >
                                 <i className="fa-sharp fa-solid fa-trash"></i>
                             </button>
