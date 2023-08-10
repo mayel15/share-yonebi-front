@@ -4,6 +4,7 @@ import './Subject.css'
 export default function Subject(props) {
 
     const [subjects, setSubjects] = useState([]);
+    const [isClickedToEdit, setIsClickedToEdit] = useState(false)
 
 
     const handleDelete = async () => {
@@ -24,21 +25,10 @@ export default function Subject(props) {
             });
     }
 
-    const handleEdit = async () => {
-        window.location.href = '/admin/editSubject'
-
-    }
-
     return (
         <div className="sub-cat-card col-lg-5">
             <h3>{props.name}</h3>
             <div className="icons">
-                <button
-                    className="icon-card"
-                    onClick={handleEdit}
-                >
-                    <i className="fa-solid fa-pen"></i>
-                </button>
                 <button
                     className="icon-card"
                     onClick={handleDelete}

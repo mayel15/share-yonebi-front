@@ -19,22 +19,11 @@ export default function Category(props) {
             });
     }
 
-    const handleEdit = async () => {
-        window.location.href = '/admin/editCategory'
-
-    }
-
     return (
         <div className="sub-cat-card col-lg-5">
             <h3>{props.name}</h3>
             <div>{props.subject + ' >'}</div>
             <div className="icons">
-                <button
-                    className="icon-card"
-                    onClick={handleEdit}
-                >
-                    <i className="fa-solid fa-pen"></i>
-                </button>
                 <button
                     className="icon-card"
                     onClick={handleDelete}
