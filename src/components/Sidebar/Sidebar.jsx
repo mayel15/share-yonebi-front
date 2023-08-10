@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Sidebar.css'
 import { Link } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 
 export default function Sidebar(props) {
   const [categories, setCategories] = useState([]);
@@ -37,7 +38,8 @@ export default function Sidebar(props) {
   return (
         <nav className="sidebar col-lg-3">
             <ul className="sidebar-nav">
-                {subjects.map((s, index)=>{
+                {(!subjects.length) ? <Loading url='https://i.gifer.com/XOsX.gif' />
+                : subjects.map((s, index)=>{
                     return (
                         <li key={index} id={index}>
                             {/*<Link to={"/"+s.name}>{s.name}</Link>*/}

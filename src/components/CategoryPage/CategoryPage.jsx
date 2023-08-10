@@ -5,6 +5,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import Footer from '../Footer/Footer';
 import './CategoryPage.css'
 import GestionButtons from '../GestionButtons/GestionButtons';
+import Loading from '../Loading/Loading';
 
 
 export default function CategoryPage(props) {
@@ -55,7 +56,8 @@ export default function CategoryPage(props) {
               )
               : null
             }
-            {(props.view === 'admin')
+            {(!resources.length) ? <Loading url='https://i.gifer.com/XlO9.gif' /> :
+              (props.view === 'admin')
               ? (resources.filter((r) => (r.subject === subject && r.category === category))
                 .map((r, index) => (
                   <Resource
