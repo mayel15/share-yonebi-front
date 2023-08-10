@@ -1,14 +1,8 @@
-import {React, useState} from "react";
+import React from "react";
 import './Subject.css'
 
 export default function Subject(props) {
-
-    const [subjects, setSubjects] = useState([]);
-    const [isClickedToEdit, setIsClickedToEdit] = useState(false)
-
-
     const handleDelete = async () => {
-
         await fetch(`https://yonebi-back.vercel.app/api/subjects/${props.id}`, {
             method: "DELETE",
             headers: {

@@ -18,8 +18,8 @@ export default function Categories() {
 
                 const data = await response.json();
 
-                console.log(data);
-                setCategories(data);
+                console.log(data.sort((a, b) => a.name.localeCompare(b.name)));
+                setCategories(data.sort((a, b) => a.name.localeCompare(b.name)));
             } catch (error) {
                 console.error(error);
             }
