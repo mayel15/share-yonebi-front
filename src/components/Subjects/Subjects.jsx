@@ -19,8 +19,8 @@ export default function Subjects() {
 
                 const data = await response.json();
 
-                console.log(data);
-                setSubjects(data);
+                console.log(data.sort((a, b) => a.name.localeCompare(b.name)));
+                setSubjects(data.sort((a, b) => a.name.localeCompare(b.name)));
             } catch (error) {
                 console.error(error);
             }

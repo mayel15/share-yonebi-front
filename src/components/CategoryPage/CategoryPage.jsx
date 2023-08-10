@@ -23,8 +23,8 @@ export default function CategoryPage(props) {
 
         const data = await response.json();
 
-        console.log(data.sort());
-        setResources(data.sort());
+        console.log(data.sort((a, b) => a.title.localeCompare(b.title)));
+        setResources(data.sort((a, b) => a.title.localeCompare(b.title)));
       } catch (error) {
         console.error(error);
       }

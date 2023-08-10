@@ -24,8 +24,8 @@ export default function Homepage() {
         });
 
         const data = await response.json();
-        console.log(data.sort());
-        setResources(data.sort().slice(0,10));
+        console.log(data.sort((a, b) => a.title.localeCompare(b.title)));
+        setResources(data.sort((a, b) => a.title.localeCompare(b.title)).slice(0,10));
       } catch (error) {
         console.error(error);
       }
