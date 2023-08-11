@@ -1,8 +1,6 @@
 import { React, useState, useEffect } from "react";
 import GestionButtons from "../GestionButtons/GestionButtons";
-import HeaderNavWithoutSearch from "../Header/HeaderNavWithoutSearch";
-
-
+import HeaderNav from "../Header/HeaderNav";
 
 export default function AddResource() {
     const [formData, setFormData] = useState({
@@ -107,7 +105,7 @@ export default function AddResource() {
 
     return (
         <div className="text-center">
-            <HeaderNavWithoutSearch />
+            <HeaderNav />
             <GestionButtons />
             <h3>Ajout d'une ressource</h3>
             <button

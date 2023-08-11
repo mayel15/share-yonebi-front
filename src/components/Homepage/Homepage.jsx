@@ -38,7 +38,7 @@ export default function Homepage() {
 
   return (
     <div>
-      <HeaderNav />
+      <HeaderNav search={true}/>
       <div className="row content-section content-center" style={{width: "100%"}}>
         <Sidebar />
         <div className="welcome-section col-lg-9">

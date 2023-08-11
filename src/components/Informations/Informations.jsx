@@ -1,12 +1,12 @@
 import React from "react";
 import './Informations.css'
 import Footer from "../Footer/Footer";
-import HeaderNavWithoutSearch from "../Header/HeaderNavWithoutSearch";
+import HeaderNav from "../Header/HeaderNav";
 
 export default function Informations() {
     return (
         <div>
-            <HeaderNavWithoutSearch />
+            <HeaderNav />
             <div className="content-section info-section">
                 <h3 className="text-center">yonebi. , c'est quoi ❓</h3>
                 <div className="texte-informations">

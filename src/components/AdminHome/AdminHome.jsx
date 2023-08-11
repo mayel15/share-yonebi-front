@@ -3,7 +3,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import GestionButtons from "../GestionButtons/GestionButtons";
 import Resource from "../Resource/Resource";
 import Loading from "../Loading/Loading";
-import HeaderNavWithoutSearch from "../Header/HeaderNavWithoutSearch";
+import HeaderNav from "../Header/HeaderNav";
 
 export default function AdminHome() {
     const [resources, setResources] = useState([]);
@@ -31,7 +31,7 @@ export default function AdminHome() {
 
     return (
         <div>
-            <HeaderNavWithoutSearch />
+            <HeaderNav />
             <div className="row content-section">
                 <Sidebar view='admin' />
                 <div className="col-lg-9">

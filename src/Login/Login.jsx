@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './Login.css'
-import HeaderNavWithoutSearch from "../components/Header/HeaderNavWithoutSearch";
+import HeaderNav from "../components/Header/HeaderNav";
 
 export default function Login(props) {
     const [formData, setFormData] = useState({
@@ -46,7 +46,7 @@ export default function Login(props) {
 
     return (
         <div>
-            <HeaderNavWithoutSearch />
+            <HeaderNav />
             <form className="text-center" onSubmit={handleSubmit}>
                 {
                     (props.access === "login")

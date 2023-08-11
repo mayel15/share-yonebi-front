@@ -3,7 +3,7 @@ import Subject from "../Subject/Subject";
 import './Subjects.css'
 import GestionButtons from "../GestionButtons/GestionButtons";
 import Loading from "../Loading/Loading";
-import HeaderNavWithoutSearch from "../Header/HeaderNavWithoutSearch";
+import HeaderNav from "../Header/HeaderNav";
 
 export default function Subjects() {
 
@@ -33,7 +33,7 @@ export default function Subjects() {
 
     return (
         <div>
-            <HeaderNavWithoutSearch />
+            <HeaderNav />
             <div className="content-section ">
                 <GestionButtons />
                 <h3 className="text-center col-lg-12 content-center">Gérer les sujets</h3>
