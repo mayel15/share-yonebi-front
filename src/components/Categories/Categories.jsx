@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import Category from "../Category/Category";
 import GestionButtons from "../GestionButtons/GestionButtons";
 import Loading from "../Loading/Loading";
+import HeaderNavWithoutSearch from "../Header/HeaderNavWithoutSearch";
 
 export default function Categories() {
 
@@ -30,6 +31,8 @@ export default function Categories() {
     }, []);
 
     return (
+        <div>
+        <HeaderNavWithoutSearch />
         <div className=" content-section ">
             <GestionButtons />
             <h3 className="text-center col-lg-12 content-center">Gérer les catégories</h3>
@@ -46,6 +49,7 @@ export default function Categories() {
                     )
                 }
             </div>
+        </div>
         </div>
 
     )

@@ -8,7 +8,7 @@ import Loading from "../Loading/Loading";
 
 import { useSelector } from 'react-redux';
 import SearchResults from '../SearchResults/SearchResults';
-
+import HeaderNav from "../Header/HeaderNav";
 
 export default function Homepage() {
   const [resources, setResources] = useState([]);
@@ -38,7 +38,8 @@ export default function Homepage() {
 
   return (
     <div>
-      <div className="row content-section content-center">
+      <HeaderNav />
+      <div className="row content-section content-center" style={{width: "100%"}}>
         <Sidebar />
         <div className="welcome-section col-lg-9">
           <h2 className="text-center"><i class="fa-solid fa-door-open"></i> Bienvenue dans yonebi. </h2>

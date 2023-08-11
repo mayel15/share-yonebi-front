@@ -1,8 +1,9 @@
-import {React, useEffect, useState} from "react";
+import { React, useEffect, useState } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import GestionButtons from "../GestionButtons/GestionButtons";
 import Resource from "../Resource/Resource";
 import Loading from "../Loading/Loading";
+import HeaderNavWithoutSearch from "../Header/HeaderNavWithoutSearch";
 
 export default function AdminHome() {
     const [resources, setResources] = useState([]);
@@ -29,33 +30,36 @@ export default function AdminHome() {
     }, []);
 
     return (
-        <div className="row content-section">
-            <Sidebar view='admin' />
-            <div className="col-lg-9">
-                <div className="text-center">
-                    <h2>Bienvenue dans l'admin de yonebi. </h2>
-                    <p>Votre banque de liens de ressources numériques</p>
+        <div>
+            <HeaderNavWithoutSearch />
+            <div className="row content-section">
+                <Sidebar view='admin' />
+                <div className="col-lg-9">
+                    <div className="text-center">
+                        <h2>Bienvenue dans l'admin de yonebi. </h2>
+                        <p>Votre banque de liens de ressources numériques</p>
+                    </div>
+                    <GestionButtons />
+                    <div className="row">
+                        {(!resources.length) ? <Loading url='https://i.gifer.com/XlO9.gif' />
+                            : resources.map((r, index) => (
+                                <Resource
+                                    title={r.title}
+                                    key={r.id}
+                                    url={r.url}
+                                    authors={r.authors}
+                                    addedAt={r.addedAt.toString()}
+                                    description={r.description}
+                                    subject={r.subject}
+                                    category={r.category}
+                                    id={r._id}
+                                    view='admin'
+                                />))
+                        }
+                    </div>
                 </div>
-                <GestionButtons />
-                <div className="row">
-                    {(!resources.length) ? <Loading url='https://i.gifer.com/XlO9.gif' />
-                        : resources.map((r, index) => (
-                            <Resource
-                                title={r.title}
-                                key={r.id}
-                                url={r.url}
-                                authors={r.authors}
-                                addedAt={r.addedAt.toString()}
-                                description={r.description}
-                                subject={r.subject}
-                                category={r.category}
-                                id={r._id}
-                                view='admin'
-                            />))
-                    }
-                </div>
+
             </div>
-            
         </div>
     )
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './components/Homepage/Homepage';
 import Login from './Login/Login';
-import HeaderNav from './components/Header/HeaderNav';
 import './App.css'
 import CategoryPage from './components/CategoryPage/CategoryPage';
 import AddResource from './components/AddResource/AddResource';
@@ -14,8 +13,7 @@ import BackTop from './components/BackTop/BackTop';
 
 function App() {
   return (
-    <Router >
-      <HeaderNav />
+    <Router>
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/:subject/:category' element={<CategoryPage />} />

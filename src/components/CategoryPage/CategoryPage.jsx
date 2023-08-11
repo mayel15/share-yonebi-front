@@ -6,6 +6,7 @@ import Footer from '../Footer/Footer';
 import './CategoryPage.css'
 import GestionButtons from '../GestionButtons/GestionButtons';
 import Loading from '../Loading/Loading';
+import HeaderNav from '../Header/HeaderNav';
 
 
 export default function CategoryPage(props) {
@@ -36,6 +37,7 @@ export default function CategoryPage(props) {
 
   return (
     <div>
+    <HeaderNav />
       <div className="row content-section">
         {
           (props.view === 'admin')
