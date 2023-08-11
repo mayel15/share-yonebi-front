@@ -37,8 +37,8 @@ export default function CategoryPage(props) {
 
   return (
     <div>
-    <HeaderNav />
-      <div className="row content-section">
+    <HeaderNav search={true}/>
+      <div className="row content-section" style={{width: "100%"}}>
         {
           (props.view === 'admin')
             ? <Sidebar view='admin' />
