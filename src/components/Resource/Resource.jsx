@@ -119,7 +119,7 @@ export default function Resource(props) {
 
     return (
         <div className="resource-card col-lg-12">
-            <h3> <a href={props.url} target="blank">{props.title}</a></h3>
+            <h3> <a href={props.url} target="_blank" rel="noopener noreferrer">{props.title}</a></h3>
             <div>{props.description}</div>
             <div>Auteurs/Sources : {props.authors}</div>
             <div>{props.subject + " > " + props.category}</div>
@@ -183,9 +183,7 @@ export default function Resource(props) {
                                         value={formData.description}
                                         placeholder="Description"
                                         onChange={handleChange}
-                                        rows={4}
-                                        cols={50}
-                                    />
+                                        rows={10}                                    />
                                 </div>
                                 <div>
                                     <label htmlFor="authors">Auteurs</label>

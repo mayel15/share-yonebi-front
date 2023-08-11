@@ -3,6 +3,7 @@ import Subject from "../Subject/Subject";
 import './Subjects.css'
 import GestionButtons from "../GestionButtons/GestionButtons";
 import Loading from "../Loading/Loading";
+import HeaderNav from "../Header/HeaderNav";
 
 export default function Subjects() {
 
@@ -31,20 +32,23 @@ export default function Subjects() {
     }, []);
 
     return (
-        <div className="content-section ">
-            <GestionButtons />
-            <h3 className="text-center col-lg-12 content-center">Gérer les sujets</h3>
-            <div className="content-center row">
+        <div>
+            <HeaderNav />
+            <div className="content-section ">
+                <GestionButtons />
+                <h3 className="text-center col-lg-12 content-center">Gérer les sujets</h3>
+                <div className="content-center row">
 
-                {(!subjects.length) ? <Loading url='https://i.gifer.com/XlO9.gif' /> :
-                    subjects.map((s, index) => (
-                        <Subject
-                            key={s.id}
-                            name={s.name}
-                            id={s._id}
-                        />)
-                    )
-                }
+                    {(!subjects.length) ? <Loading url='https://i.gifer.com/XlO9.gif' /> :
+                        subjects.map((s, index) => (
+                            <Subject
+                                key={s.id}
+                                name={s.name}
+                                id={s._id}
+                            />)
+                        )
+                    }
+                </div>
             </div>
         </div>
 

@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './components/Homepage/Homepage';
 import Login from './Login/Login';
-import HeaderNav from './components/Header/HeaderNav';
 import './App.css'
 import CategoryPage from './components/CategoryPage/CategoryPage';
 import AddResource from './components/AddResource/AddResource';
@@ -10,11 +9,11 @@ import AdminHome from './components/AdminHome/AdminHome';
 import Categories from './components/Categories/Categories';
 import Subjects from './components/Subjects/Subjects';
 import Informations from './components/Informations/Informations';
+import BackTop from './components/BackTop/BackTop';
 
 function App() {
   return (
-    <Router >
-      <HeaderNav />
+    <Router>
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/:subject/:category' element={<CategoryPage />} />
@@ -27,6 +26,7 @@ function App() {
         <Route path='/admin/categories' element={<Categories />} />
         <Route path='/admin/:subject/:category' element={<CategoryPage view='admin'/>} />
       </Routes>
+      <BackTop />
     </Router>
   );
 }

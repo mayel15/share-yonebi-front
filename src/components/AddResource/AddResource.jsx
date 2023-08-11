@@ -1,7 +1,6 @@
 import { React, useState, useEffect } from "react";
 import GestionButtons from "../GestionButtons/GestionButtons";
-
-
+import HeaderNav from "../Header/HeaderNav";
 
 export default function AddResource() {
     const [formData, setFormData] = useState({
@@ -106,6 +105,7 @@ export default function AddResource() {
 
     return (
         <div className="text-center">
+            <HeaderNav />
             <GestionButtons />
             <h3>Ajout d'une ressource</h3>
             <button
@@ -141,8 +141,7 @@ export default function AddResource() {
                         value={formData.description}
                         placeholder="Description"
                         onChange={handleChange}
-                        rows={4}
-                        cols={50} 
+                        rows={10} 
                     />
                 </div>
                 <div>

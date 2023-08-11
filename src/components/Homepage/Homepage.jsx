@@ -8,7 +8,7 @@ import Loading from "../Loading/Loading";
 
 import { useSelector } from 'react-redux';
 import SearchResults from '../SearchResults/SearchResults';
-
+import HeaderNav from "../Header/HeaderNav";
 
 export default function Homepage() {
   const [resources, setResources] = useState([]);
@@ -26,7 +26,8 @@ export default function Homepage() {
 
         const data = await response.json();
         console.log(data.sort((a, b) => a.title.localeCompare(b.title)));
-        setResources(data.sort((a, b) => a.title.localeCompare(b.title)).slice(0, 10));
+        /*setResources(data.sort((a, b) => a.title.localeCompare(b.title)).slice(0, 10));*/
+        setResources(data.sort((a, b) => a.title.localeCompare(b.title)));
       } catch (error) {
         console.error(error);
       }
@@ -37,13 +38,14 @@ export default function Homepage() {
 
   return (
     <div>
-      <div className="row content-section content-center">
+      <HeaderNav search={true}/>
+      <div className="row content-section content-center" style={{width: "100%"}}>
         <Sidebar />
         <div className="welcome-section col-lg-9">
           <h2 className="text-center"><i class="fa-solid fa-door-open"></i> Bienvenue dans yonebi. </h2>
           <p className="text-center">Votre banque de liens de ressources numériques.<br />Accéder aux meilleures formations gratuites.</p>
 
-          <h3 className="text-center"> Voici quelques unes !</h3>
+          <h3 className="text-center"> Voici quelques unes ! 👇</h3>
 
           <div className="row">
             {(!resources.length)
