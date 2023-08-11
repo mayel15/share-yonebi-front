@@ -6,6 +6,13 @@
     padding: 0 10%;
 }
 
+
+/* For media query use*/
+/*@media only screen and (max-width: 600px) {
+    .content-section {
+      padding: 0 10px;
+    }
+}*/
 .header-nav a {
     font-weight: bolder;
 }

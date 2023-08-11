@@ -26,7 +26,8 @@ export default function Homepage() {
 
         const data = await response.json();
         console.log(data.sort((a, b) => a.title.localeCompare(b.title)));
-        setResources(data.sort((a, b) => a.title.localeCompare(b.title)).slice(0, 10));
+        /*setResources(data.sort((a, b) => a.title.localeCompare(b.title)).slice(0, 10));*/
+        setResources(data.sort((a, b) => a.title.localeCompare(b.title)));
       } catch (error) {
         console.error(error);
       }
@@ -43,7 +44,7 @@ export default function Homepage() {
           <h2 className="text-center"><i class="fa-solid fa-door-open"></i> Bienvenue dans yonebi. </h2>
           <p className="text-center">Votre banque de liens de ressources numériques.<br />Accéder aux meilleures formations gratuites.</p>
 
-          <h3 className="text-center"> Voici quelques unes !</h3>
+          <h3 className="text-center"> Voici quelques unes ! 👇</h3>
 
           <div className="row">
             {(!resources.length)

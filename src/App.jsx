@@ -10,6 +10,7 @@ import AdminHome from './components/AdminHome/AdminHome';
 import Categories from './components/Categories/Categories';
 import Subjects from './components/Subjects/Subjects';
 import Informations from './components/Informations/Informations';
+import BackTop from './components/BackTop/BackTop';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path='/admin/categories' element={<Categories />} />
         <Route path='/admin/:subject/:category' element={<CategoryPage view='admin'/>} />
       </Routes>
+      <BackTop />
     </Router>
   );
 }
