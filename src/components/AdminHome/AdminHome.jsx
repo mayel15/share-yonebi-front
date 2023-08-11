@@ -32,7 +32,7 @@ export default function AdminHome() {
     return (
         <div>
             <HeaderNav />
-            <div className="row content-section">
+            <div className="row content-section" style={{width: "100%"}}>
                 <Sidebar view='admin' />
                 <div className="col-lg-9">
                     <div className="text-center">

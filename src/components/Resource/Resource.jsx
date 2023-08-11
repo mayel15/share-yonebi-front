@@ -183,9 +183,7 @@ export default function Resource(props) {
                                         value={formData.description}
                                         placeholder="Description"
                                         onChange={handleChange}
-                                        rows={4}
-                                        cols={50}
-                                    />
+                                        rows={10}                                    />
                                 </div>
                                 <div>
                                     <label htmlFor="authors">Auteurs</label>

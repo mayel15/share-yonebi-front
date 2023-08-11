@@ -141,8 +141,7 @@ export default function AddResource() {
                         value={formData.description}
                         placeholder="Description"
                         onChange={handleChange}
-                        rows={4}
-                        cols={50} 
+                        rows={10} 
                     />
                 </div>
                 <div>
