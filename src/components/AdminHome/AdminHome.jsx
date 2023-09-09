@@ -36,7 +36,7 @@ export default function AdminHome() {
                 <Sidebar view='admin' />
                 <div className="col-lg-9">
                     <div className="text-center">
-                        <h2>Bienvenue dans l'admin de yonebi. </h2>
+                        <h2>Bienvenue dans l'admin de share.yonebi. </h2>
                         <p>Votre banque de liens de ressources numériques</p>
                     </div>
                     <GestionButtons />

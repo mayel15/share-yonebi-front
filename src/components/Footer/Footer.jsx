@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
       <div className="text-center footer">
-        <div>yonebi. <i class="fa-solid fa-signs-post"></i> © {text_footer}  <a href='https://www.linkedin.com/in/pape-mayel-diagne-thiam/'>Pape</a>  </div>
+        <div>share.yonebi. <i class="fa-solid fa-signs-post"></i> © {text_footer}  <a href='https://www.linkedin.com/in/pape-mayel-diagne-thiam/'>Pape</a>  </div>
       </div>
   )
 }
