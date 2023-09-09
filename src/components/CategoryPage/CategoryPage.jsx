@@ -52,7 +52,7 @@ export default function CategoryPage(props) {
               (props.view === 'admin')
               ? (
                 <div>
-                  <h3 className='text-center' >Admin de yonebi.</h3> 
+                  <h3 className='text-center' >Admin de share.yonebi.</h3> 
                   <GestionButtons />
                 </div>
               )

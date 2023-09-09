@@ -7,7 +7,7 @@ export default function HeaderNav(props) {
     return (
         <nav className="navbar bg-body-tertiary top content-section" id="top">
             <div className="container-fluid">
-                <a href="/" className="navbar-brand">yonebi. <i class="fa-solid fa-signs-post"></i></a>
+                <a href="/" className="navbar-brand">share.yonebi. <i class="fa-solid fa-signs-post"></i></a>
                 {
                     (props.search) ? <Search /> : null
                 }
